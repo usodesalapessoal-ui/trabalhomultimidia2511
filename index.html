@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinil Burguer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= PÁGINA INICIAL (HOME) ================= -->
+  <div id="home-view">
+    
+    <!-- HEADER / NAV -->
+    <header class="header">
+      <div class="container header-container">
+        <a href="#" class="logo">
+          <img class="brand-logo" src="vinil-burguer-logo.png" alt="Logo oficial da Vinil Burguer">
+          <div class="logo-text">
+            <p class="logo-title">Vinil</p>
+            <p class="logo-subtitle">Burguer</p>
+          </div>
+        </a>
+
+        <nav class="nav-desktop">
+          <button class="nav-link active" onclick="closeMenuPage()">Início</button>
+          <button class="nav-link" onclick="openMenuPage()">Cardápio</button>
+          <button class="nav-link" onclick="openLocationPage()">Lojas</button>
+          <button class="nav-link" onclick="openAboutPage()">Sobre</button>
+          <button class="nav-link" onclick="openContactPage()">Contato</button>
+        </nav>
+
+        <button class="btn-primary btn-desktop" onclick="openMenuPage()">
+          Peça Agora
+          <svg class="icon-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 16 16">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button class="btn-mobile-toggle" onclick="toggleMobileMenu()">
+          <svg class="icon-menu" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="#" onclick="toggleMobileMenu()">Início</a>
+        <a href="#" onclick="toggleMobileMenu(); openMenuPage()">Cardápio</a>
+        <a href="#" onclick="toggleMobileMenu(); openLocationPage()">Lojas</a>
+        <a href="#" onclick="toggleMobileMenu(); openAboutPage()">Sobre</a>
+        <a href="#" onclick="toggleMobileMenu(); openContactPage()">Contato</a>
+        <button class="btn-primary" onclick="toggleMobileMenu(); openMenuPage()">Peça Agora →</button>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-bg-red"></div>
+      <div class="hero-bg-pattern"></div>
+
+      <div class="container hero-grid">
+        <!-- Esquerda -->
+        <div class="hero-content">
+          <p class="hero-kicker">Boa comida. Bom humor.</p>
+          <h1 class="hero-title">
+            Sabor que<br>
+            <span class="text-red">vicia de</span><br>
+            verdade!
+          </h1>
+          <p class="hero-desc">
+            Hamburgueres artesanais grelhados na brasa, batatas crocantes e molhos irresistíveis — feitos fresquinhos pra você.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn-primary btn-lg" onclick="openMenuPage()">
+              Pedir Agora
+              <svg class="icon-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 16 16">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button class="btn-outline btn-lg" onclick="openMenuPage()">
+              Ver Cardápio
+            </button>
+          </div>
+
+          <div class="hero-badges">
+            <div class="badge-item">
+              <span class="badge-icon">🔥</span>
+              <span class="badge-label">Grelha<br>Autêntica</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">🥩</span>
+              <span class="badge-label">Ingredientes<br>Frescos</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">🛵</span>
+              <span class="badge-label">Entrega<br>Rápida</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direita -->
+        <div class="hero-image-wrapper">
+          <div class="fresh-seal">
+            <span class="seal-red">100%<br>Fresquinho</span>
+            <span class="seal-dark">& Gostoso</span>
+          </div>
+          <div class="hero-circle">
+            <img src="https://images.unsplash.com/photo-1662452883375-9226ea22c765?w=800&h=800&fit=crop&auto=format" alt="Hambúrguer artesanal da Vinil Burguer">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTAQUES DO CARDÁPIO -->
+    <section id="cardapio" class="top-picks">
+      <div class="container">
+        <div class="section-header">
+          <span class="chevron">›</span>
+          <h2 class="section-title">Destaques do Cardápio</h2>
+          <span class="chevron">‹</span>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="card-img-box">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=500&fit=crop&auto=format" alt="Hambúrguer artesanal com queijo">
+              <span class="card-badge bg-red">MAIS VENDIDO</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Top Burguer</h3>
+              <p class="card-desc">Pão da sua preferência, hambúrguer artesanal, mussarela, presunto, catupiry e batata palha.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 30,00</span>
+                <span class="add-indicator-wrap">
+                  <button class="btn-add-outline" onclick="addToCart('Top Burguer')" aria-label="Adicionar Top Burguer ao carrinho">+</button>
+                  <span class="add-indicator" aria-hidden="true"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="card-img-box">
+              <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&h=500&fit=crop&auto=format" alt="Hambúrguer com bacon">
+              <span class="card-badge bg-orange">MAIS PEDIDO</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Bacon Burguer</h3>
+              <p class="card-desc">Hambúrguer artesanal, maionese, cheddar, bacon, mussarela, alface e tomate.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 28,00</span>
+                <span class="add-indicator-wrap">
+                  <button class="btn-add-outline" onclick="addToCart('Bacon Burguer')" aria-label="Adicionar Bacon Burguer ao carrinho">+</button>
+                  <span class="add-indicator" aria-hidden="true"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="card-img-box">
+              <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=500&fit=crop&auto=format" alt="Cheese salad com alface e tomate">
+              <span class="card-badge bg-dark">CLÁSSICO</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Cheese Salad</h3>
+              <p class="card-desc">Hambúrguer, tomate, alface, cebola, ovo e maionese no pão da sua preferência.</p>
+              <div class="card-footer">
+                <span class="card-price">R$ 25,00</span>
+                <span class="add-indicator-wrap">
+                  <button class="btn-add-outline" onclick="addToCart('Cheese Salad')" aria-label="Adicionar Cheese Salad ao carrinho">+</button>
+                  <span class="add-indicator" aria-hidden="true"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="center-action">
+          <button class="btn-primary btn-lg" onclick="openMenuPage()">
+            Ver Cardápio Completo
+            <svg class="icon-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 16 16">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER COMBO -->
+    <section class="combo-banner">
+      <div class="container combo-flex">
+        <div class="combo-img-circle">
+          <img src="https://images.unsplash.com/photo-1734988353291-9ac67fa5997b?w=500&h=500&fit=crop&auto=format" alt="Combo hamburguer e batatas">
+        </div>
+
+        <div class="combo-text">
+          <p class="combo-kicker">Monte o seu</p>
+          <h2 class="combo-title">Combo Perfeito!</h2>
+          <p class="combo-subtitle">Adicione batatas e bebida e economize mais.</p>
+          <button class="btn-white" onclick="openMenuPage()">
+            Montar Agora
+            <svg class="icon-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 16 16">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="discount-badge">
+          <p class="discount-label">Economize</p>
+          <p class="discount-value">20%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <!-- Coluna 1: Marca -->
+        <div>
+          <div class="logo footer-logo">
+            <img class="brand-logo" src="vinil-burguer-logo.png" alt="Logo oficial da Vinil Burguer">
+            <div class="logo-text">
+              <p class="logo-title text-white">Vinil</p>
+              <p class="logo-subtitle">Burguer</p>
+            </div>
+          </div>
+          <p class="footer-about">
+            Hambúrgueres artesanais, opções veganas e acompanhamentos feitos com carinho.
+          </p>
+          <div class="social-links">
+            <a href="#">f</a>
+            <a href="#">in</a>
+            <a href="#">tw</a>
+            <a href="#">tt</a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Links Rápidos -->
+        <div>
+          <p class="footer-heading">Links Rápidos</p>
+          <ul class="footer-list">
+            <li><a href="#" onclick="closeMenuPage()">Início</a></li>
+            <li><a href="#" onclick="openMenuPage()">Cardápio</a></li>
+            <li><a href="#" onclick="openLocationPage()">Lojas</a></li>
+            <li><a href="#" onclick="openAboutPage()">Sobre Nós</a></li>
+            <li><a href="#" onclick="openContactPage()">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Cardápio -->
+        <div>
+          <p class="footer-heading">Cardápio</p>
+          <ul class="footer-list">
+            <li><a href="#" onclick="openMenuPage()">Hambúrgueres</a></li>
+            <li><a href="#" onclick="openMenuPage()">Porções</a></li>
+            <li><a href="#" onclick="openMenuPage()">Bebidas</a></li>
+            <li><a href="#" onclick="openMenuPage()">Sobremesas</a></li>
+            <li><a href="#" onclick="openMenuPage()">Combos</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Contato + Newsletter -->
+        <div>
+          <p class="footer-heading">Contato</p>
+          <ul class="footer-contact">
+            <li><span>📞</span><span>+55 (11) 99999-0000</span></li>
+            <li><span>✉️</span><span>oi@brasaburger.com.br</span></li>
+            <li><span>📍</span><span>Av. Cel. Firmo Vieira de Camargo, 939<br>Centro, Tatuí – SP</span></li>
+          </ul>
+          <p class="newsletter-title">Fique por dentro!</p>
+          <p class="newsletter-desc">Promoções e novidades exclusivas.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault()">
+            <input type="email" placeholder="Seu e-mail">
+            <button type="submit">Inscrever-se</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Vinil Burguer. Todos os direitos reservados.
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ================= PÁGINA DO CARDÁPIO (MENU PAGE) ================= -->
+  <div id="menu-view" class="menu-page hidden">
+    <!-- Top Bar -->
+    <header class="menu-topbar">
+      <button class="btn-back" onclick="closeMenuPage()">
+        <svg class="icon-back" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+          <path d="M10 3L5 8l5 5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Voltar
+      </button>
+
+      <div class="menu-brand">
+        <img class="brand-logo-sm" src="vinil-burguer-logo.png" alt="Logo oficial da Vinil Burguer">
+        <div class="menu-brand-text">
+          <p class="text-white">Vinil</p>
+          <p class="text-red">Burguer</p>
+        </div>
+      </div>
+
+      <div class="search-box">
+        <svg class="icon-search" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8" />
+          <path d="M21 21l-4.35-4.35" stroke-linecap="round" />
+        </svg>
+        <input type="text" id="search-input" placeholder="Buscar item..." oninput="renderMenuItems()">
+      </div>
+
+      <button class="btn-cart" onclick="toggleCartView()" aria-label="Abrir carrinho">
+        <svg class="icon-cart" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+        <span class="cart-label">Carrinho</span>
+        <span id="cart-count" class="cart-badge hidden">0</span>
+      </button>
+    </header>
+
+    <!-- Layout Principal -->
+    <div class="menu-layout" id="menu-layout">
+      <!-- Sidebar de Categorias -->
+      <aside class="menu-sidebar" id="category-sidebar"></aside>
+
+      <!-- Grid de Produtos -->
+      <main class="menu-main">
+        <h2 id="menu-heading" class="menu-heading">Popular</h2>
+        <div id="menu-grid" class="menu-items-grid"></div>
+      </main>
+    </div>
+
+    <main class="cart-view hidden" id="cart-view">
+      <div class="cart-content">
+        <h2 class="menu-heading">Seu carrinho</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cart-total">R$ 0,00</strong>
+        </div>
+        <section class="checkout-panel hidden" id="checkout-panel">
+          <button class="btn-primary" id="checkout-button" onclick="showPaymentOptions()">Fazer pedido</button>
+          <div class="payment-options hidden" id="payment-options">
+            <h3>Como deseja pagar?</h3>
+            <div class="payment-buttons">
+              <button class="payment-button" onclick="placeOrder('Pix')">Pix</button>
+              <button class="payment-button" onclick="placeOrder('Cartão')">Cartão</button>
+              <button class="payment-button" onclick="placeOrder('Dinheiro')">Dinheiro</button>
+            </div>
+            <p class="checkout-note">Demonstração: o pedido não é enviado à loja por este site.</p>
+          </div>
+        </section>
+        <p class="order-confirmation hidden" id="order-confirmation" role="status" aria-live="polite"></p>
+        <button class="btn-primary cart-continue" onclick="toggleCartView()">Continuar comprando</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- ================= PÁGINA SOBRE ================= -->
+  <div id="about-view" class="info-page hidden">
+    <header class="menu-topbar">
+      <button class="btn-back" onclick="closeInfoPage()">
+        <svg class="icon-back" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+          <path d="M10 3L5 8l5 5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Voltar
+      </button>
+      <div class="menu-brand">
+        <img class="brand-logo-sm" src="vinil-burguer-logo.png" alt="Logo oficial da Vinil Burguer">
+        <div class="menu-brand-text"><p class="text-white">Vinil</p><p class="text-red">Burguer</p></div>
+      </div>
+      <span class="contact-topbar-spacer" aria-hidden="true"></span>
+    </header>
+    <main class="info-content">
+      <p class="contact-kicker">Nossa história, nosso ritmo</p>
+      <h1 class="contact-title">Muito mais que hambúrguer</h1>
+      <p class="info-lead">A Vinil Burguer une sabor artesanal, música e boas lembranças em um ambiente feito para receber todo mundo.</p>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-card-icon" aria-hidden="true">🎸</span>
+          <h2>Uma viagem musical</h2>
+          <p>Inspirada pela energia dos anos 1980, nossa identidade traz discos de vinil, fitas cassete, instrumentos e referências a grandes nomes da música. Um clima descontraído e acolhedor para aproveitar cada visita.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-card-icon" aria-hidden="true">🎨</span>
+          <h2>Feita de boas cores</h2>
+          <p>Vermelho, vinho e bege traduzem a personalidade da casa: energia e apetite, aconchego e sofisticação, com equilíbrio e conforto.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-card-icon" aria-hidden="true">🍔</span>
+          <h2>Sabor para todos</h2>
+          <p>Nosso cardápio combina receitas artesanais e opções para diferentes gostos, incluindo alternativas veganas e escolhas mais leves.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-card-icon" aria-hidden="true">📍</span>
+          <h2>Mais perto de você</h2>
+          <p>Estamos no centro de Tatuí, em um espaço renovado para oferecer conforto, acessibilidade e uma experiência gostosa para toda a família.</p>
+        </article>
+      </div>
+      <button class="btn-primary btn-lg info-action" onclick="openLocationPage()">Encontre a gente</button>
+    </main>
+  </div>
+
+  <!-- ================= PÁGINA LOJAS ================= -->
+  <div id="location-view" class="info-page hidden">
+    <header class="menu-topbar">
+      <button class="btn-back" onclick="closeInfoPage()">
+        <svg class="icon-back" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+          <path d="M10 3L5 8l5 5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Voltar
+      </button>
+      <div class="menu-brand">
+        <img class="brand-logo-sm" src="vinil-burguer-logo.png" alt="Logo oficial da Vinil Burguer">
+        <div class="menu-brand-text"><p class="text-white">Vinil</p><p class="text-red">Burguer</p></div>
+      </div>
+      <span class="contact-topbar-spacer" aria-hidden="true"></span>
+    </header>
+    <main class="info-content location-content">
+      <p class="contact-kicker">Esperamos por você</p>
+      <h1 class="contact-title">Nossa loja</h1>
+      <p class="info-lead">Venha curtir boa música e hambúrguer artesanal no centro de Tatuí.</p>
+      <section class="location-card">
+        <span class="info-card-icon" aria-hidden="true">📍</span>
+        <h2>Vinil Burguer</h2>
+        <address>Av. Cel. Firmo Vieira de Camargo, nº 939<br>Centro, Tatuí – SP<br>CEP 18270-770</address>
+        <a class="btn-primary btn-lg map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Cel.+Firmo+Vieira+de+Camargo%2C+939%2C+Centro%2C+Tatu%C3%AD%2C+SP%2C+18270-770" target="_blank" rel="noopener noreferrer">Veja no mapa <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+  </div>
+
+  <!-- ================= PÁGINA DE CONTATO ================= -->
+  <div id="contact-view" class="contact-page hidden">
+    <header class="menu-topbar">
+      <button class="btn-back" onclick="closeContactPage()">
+        <svg class="icon-back" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+          <path d="M10 3L5 8l5 5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Voltar
+      </button>
+      <div class="menu-brand">
+        <img class="brand-logo-sm" src="vinil-burguer-logo.png" alt="Logo oficial da Vinil Burguer">
+        <div class="menu-brand-text">
+          <p class="text-white">Vinil</p>
+          <p class="text-red">Burguer</p>
+        </div>
+      </div>
+      <span class="contact-topbar-spacer" aria-hidden="true"></span>
+    </header>
+    <main class="contact-content">
+      <p class="contact-kicker">Estamos por aqui</p>
+      <h1 class="contact-title">Fale com a gente</h1>
+      <p class="contact-intro">Tem alguma dúvida? Entre em contato ou venha nos visitar.</p>
+      <div class="contact-cards">
+        <a class="contact-card" href="tel:+5511999990000">
+          <span class="contact-icon" aria-hidden="true">📞</span>
+          <span><strong>Telefone</strong><span>+55 (11) 99999-0000</span></span>
+        </a>
+        <a class="contact-card" href="mailto:oi@brasaburger.com.br">
+          <span class="contact-icon" aria-hidden="true">✉️</span>
+          <span><strong>E-mail</strong><span>oi@brasaburger.com.br</span></span>
+        </a>
+        <div class="contact-card">
+          <span class="contact-icon" aria-hidden="true">📍</span>
+          <span><strong>Endereço</strong><span>Av. Cel. Firmo Vieira de Camargo, nº 939<br>Centro, Tatuí – SP, CEP 18270-770</span></span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Script para interação das abas e cardápio -->
+  <script>
+    const CATEGORIES = [
+      { id: "popular", label: "Destaques", icon: "⭐" },
+      { id: "lanches", label: "Lanches", icon: "🍔" },
+      { id: "hamburgueres", label: "Hambúrgueres", icon: "🥩" },
+      { id: "veganos", label: "Lanches Veganos", icon: "🌱" },
+      { id: "leves", label: "Lanches Leves", icon: "🥗" },
+      { id: "combos", label: "Combos", icon: "🎁" },
+      { id: "bebidas", label: "Bebidas", icon: "🥤" },
+      { id: "porcoes", label: "Porções", icon: "🍟" },
+      { id: "sobremesas", label: "Sobremesas", icon: "🍰" },
+      { id: "molhos", label: "Molhos", icon: "🫙" },
+    ];
+
+    const MENU_IMAGES = {
+      burger: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&h=380&fit=crop&auto=format",
+      baconBurger: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=500&h=380&fit=crop&auto=format",
+      veganBurger: "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=500&h=380&fit=crop&auto=format",
+      sandwich: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500&h=380&fit=crop&auto=format",
+      salad: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&h=380&fit=crop&auto=format",
+      combo: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=380&fit=crop&auto=format",
+      fries: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&h=380&fit=crop&auto=format",
+      onionRings: "https://images.unsplash.com/photo-1639024471283-03518883512d?w=500&h=380&fit=crop&auto=format",
+      sauce: "https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=500&h=380&fit=crop&auto=format",
+      orangeSoda: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Fanta-Orange-Can-330ml_84177_%287116950883%29.jpg/500px-Fanta-Orange-Can-330ml_84177_%287116950883%29.jpg",
+      grapeSoda: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Fanta_grape_325ml_can-front_PNr%C2%B00882.jpg/500px-Fanta_grape_325ml_can-front_PNr%C2%B00882.jpg",
+      cola: "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500&h=380&fit=crop&auto=format",
+      juice: "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500&h=380&fit=crop&auto=format",
+      water: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=380&fit=crop&auto=format",
+      beer: "https://images.unsplash.com/photo-1608270586620-248524c67de9?w=500&h=380&fit=crop&auto=format",
+      milkshake: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&h=380&fit=crop&auto=format",
+      dessert: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=380&fit=crop&auto=format",
+      iceCream: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&h=380&fit=crop&auto=format",
+    };
+
+    function getMenuImage(name, category) {
+      const productName = name.toLowerCase();
+      if (category === "bebidas") {
+        if (productName.includes("fanta laranja")) return MENU_IMAGES.orangeSoda;
+        if (productName.includes("fanta uva")) return MENU_IMAGES.grapeSoda;
+        if (productName.includes("coca-cola")) return MENU_IMAGES.cola;
+        if (productName.includes("guaraná") || productName.includes("sprite")) return MENU_IMAGES.orangeSoda;
+        if (productName.includes("suco")) return MENU_IMAGES.juice;
+        if (productName.includes("água")) return MENU_IMAGES.water;
+        if (productName.includes("cerveja") || productName.includes("heineken") || productName.includes("brahma") || productName.includes("skol") || productName.includes("chopp")) return MENU_IMAGES.beer;
+        if (productName.includes("milkshake")) return MENU_IMAGES.milkshake;
+      }
+      if (category === "molhos") return MENU_IMAGES.sauce;
+      if (category === "sobremesas") return productName.includes("sorvete") || productName.includes("picolé") ? MENU_IMAGES.iceCream : MENU_IMAGES.dessert;
+      if (category === "porcoes") return productName.includes("onion rings") ? MENU_IMAGES.onionRings : productName.includes("salada") ? MENU_IMAGES.salad : MENU_IMAGES.fries;
+      if (category === "combos") return MENU_IMAGES.combo;
+      if (category === "veganos") return MENU_IMAGES.veganBurger;
+      if (/vegano|lentilha|grão-de-bico|tofu|soja/.test(productName)) return MENU_IMAGES.veganBurger;
+      if (category === "leves") return productName.includes("salada") ? MENU_IMAGES.salad : MENU_IMAGES.sandwich;
+      if (category === "hamburgueres" || category === "lanches") {
+        if (productName.includes("bacon")) return MENU_IMAGES.baconBurger;
+        if (productName.includes("natural")) return MENU_IMAGES.sandwich;
+        return MENU_IMAGES.burger;
+      }
+      return MENU_IMAGES.burger;
+    }
+
+    function getMenuImageCredit(name) {
+      if (name === "Fanta Laranja") {
+        return '<span class="photo-credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Fanta-Orange-Can-330ml_84177_(7116950883).jpg" target="_blank" rel="noopener noreferrer">Emilian Robert Vicol / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a></span>';
+      }
+      if (name === "Fanta Uva") {
+        return '<span class="photo-credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Fanta_grape_325ml_can-front_PNr%C2%B00882.jpg" target="_blank" rel="noopener noreferrer">D-Kuru / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></span>';
+      }
+      return "";
+    }
+
+    function createItem(name, price, category, description) {
+      return {
+        name,
+        price,
+        category,
+        description,
+        img: getMenuImage(name, category),
+        featured: ["Top Burguer", "Bacon Burguer", "Cheese Salad"].includes(name)
+      };
+    }
+
+    const ITEMS = [
+      createItem("Maionese tradicional", null, "molhos", "Molho tradicional para acompanhar seu lanche."),
+      createItem("Ketchup", null, "molhos", "Molho clássico de tomate."),
+      createItem("Mostarda", null, "molhos", "Mostarda para acompanhar seu pedido."),
+      createItem("Maionese temperada", null, "molhos", "Maionese temperada da casa."),
+      createItem("Molho verde", null, "molhos", "Molho verde da casa."),
+      createItem("Molho agridoce", null, "molhos", "Molho agridoce para acompanhar os combos."),
+      ...[1, 2, 3, 4, 5].map(level =>
+        createItem(`Molho de pimenta vermelha — nível ${level}`, null, "molhos", `Molho de pimenta vermelha, nível ${level} de ardência.`)
+      ),
+      createItem("Molho da casa", null, "molhos", "Receita especial da Vinil Burguer."),
+
+      createItem("Hambúrguer da casa", null, "hamburgueres", "Artesanal, recheado com queijo e bacon, cebola, chimichurri e páprica picante."),
+      createItem("Hambúrguer vegano", null, "hamburgueres", "Feito com carne de soja, lentilha ou grão-de-bico."),
+      createItem("Hambúrguer industrializado", null, "hamburgueres", "Hambúrguer de carne pronto."),
+      createItem("Hambúrguer artesanal", null, "hamburgueres", "Feito com patinho ou acém moído."),
+
+      createItem("Top Burguer", "R$ 30,00", "lanches", "Pão da sua preferência, hambúrguer artesanal, queijo mussarela, presunto, catupiry e batata palha."),
+      createItem("Bacon Burguer", "R$ 28,00", "lanches", "Pão da sua preferência, hambúrguer artesanal, maionese, cheddar, bacon picado, mussarela, alface e tomate."),
+      createItem("Cheese Salad", "R$ 25,00", "lanches", "Pão da sua preferência, hambúrguer artesanal ou industrializado, tomate, alface, cebola, ovo e maionese."),
+      createItem("Lanche Vulcão", "R$ 35,00", "lanches", "Escolha cheddar ou catupiry por cima."),
+      createItem("Burguer Onion", "R$ 30,00", "lanches", "Pão da sua preferência, hambúrguer artesanal, anéis de cebola empanada e cheddar cremoso."),
+      createItem("Lanche Kids", "R$ 18,00", "lanches", "Hambúrguer industrializado, queijo mussarela e pão."),
+      createItem("Carro-chefe", null, "lanches", "Burguer na brasa com 2 hambúrgueres recheados, molho da casa, salada, catupiry e cheddar cremoso."),
+
+      createItem("Zen Burguer", "R$ 26,00", "veganos", "Opção vegana com carne de soja, pão brioche, maionese vegana, alface, tomate, molho Zen Burguer e cebola."),
+      createItem("Sanduíche Natural Vegano", "R$ 20,00", "veganos", "Pão vegano, homus, tomate seco, hambúrguer de soja e folhas de rúcula."),
+      createItem("Hambúrguer de Lentilha", "R$ 25,00", "veganos", "Hambúrguer de lentilha, cenoura, temperos, pão, alface e molho vegano."),
+      createItem("Vegburguer", "R$ 27,00", "veganos", "Hambúrguer de grão-de-bico, cenoura ralada, cuscuz, cebola, cheiro-verde, maionese vegana e pão integral."),
+      createItem("Burguer Vegano de Queijo", "R$ 32,00", "veganos", "Pão, hambúrguer de soja, queijo vegano e maionese vegana."),
+      createItem("Burguer Vegano de Queijo e Tofu", "R$ 36,00", "veganos", "Pão, hambúrguer de soja, molho vegano e tofu."),
+
+      createItem("Lanche Light de Frango", "R$ 22,00", "leves", "Pão integral, alface, tomate, ovo, cheiro-verde, frango desfiado e maionese light."),
+      createItem("Lanche de Quinoa", "R$ 20,00", "leves", "Pão integral, hambúrguer artesanal de quinoa, alface, tomate, ovo e cebola."),
+      createItem("Hambúrguer de Aveia", "R$ 18,00", "leves", "Pão integral, alface, tomate, hambúrguer artesanal de aveia em flocos, cebola roxa e maionese light."),
+      createItem("Hambúrguer Light com Chia e Linhaça", "R$ 19,00", "leves", "Pão integral, alface, tomate, chia, farinha de linhaça, cebola e maionese light."),
+      createItem("Hambúrguer Light", "R$ 18,00", "leves", "Pão francês, hambúrguer artesanal, alface, cebola roxa, tomate em cubos, salsa picada e maionese light."),
+
+      createItem("Combo Hambúrguer da Casa", "R$ 44,00", "combos", "Hambúrguer da casa, batata frita e refrigerante. Opção de adicionar carne."),
+      createItem("Combo Lanche Vulcão", "R$ 40,90", "combos", "Lanche Vulcão, onion rings e refrigerante. Opção de batata frita ou rústica sobre o hambúrguer."),
+      createItem("Combo Carro-chefe", "R$ 34,90", "combos", "Carro-chefe, refrigerante ou suco natural e molho agridoce."),
+      createItem("Combo Vegano", "R$ 36,90", "combos", "Lanche vegano, suco natural ou refrigerante e porção de batata."),
+      createItem("Combo Light", "R$ 38,90", "combos", "Lanche light, suco natural e salada Caesar."),
+      createItem("Combo Kids", "R$ 27,90", "combos", "Lanche Kids, batata frita e suco."),
+
+      createItem("Coca-Cola Zero", "R$ 7,50", "bebidas", "Refrigerante."),
+      createItem("Coca-Cola", "R$ 7,00", "bebidas", "Refrigerante."),
+      createItem("Fanta Laranja", "R$ 6,00", "bebidas", "Refrigerante."),
+      createItem("Fanta Uva", "R$ 6,00", "bebidas", "Refrigerante."),
+      createItem("Guaraná", "R$ 6,00", "bebidas", "Refrigerante."),
+      createItem("Guaraná Zero", "R$ 6,50", "bebidas", "Refrigerante."),
+      createItem("Sprite", "R$ 6,00", "bebidas", "Refrigerante."),
+      createItem("Sprite Zero", "R$ 6,50", "bebidas", "Refrigerante."),
+      createItem("Suco Natural de Laranja", "R$ 8,00", "bebidas", "Suco natural."),
+      createItem("Suco Natural de Limão", "R$ 7,00", "bebidas", "Suco natural."),
+      createItem("Suco Natural de Maracujá", "R$ 9,00", "bebidas", "Suco natural."),
+      createItem("Suco de Uva Del Valle", "R$ 7,00", "bebidas", "Suco de uva."),
+      createItem("Água Natural", "R$ 4,00", "bebidas", "Água sem gás."),
+      createItem("Água com Gás", "R$ 4,00", "bebidas", "Água com gás."),
+      createItem("Heineken", "R$ 9,00", "bebidas", "Cerveja."),
+      createItem("Brahma", "R$ 7,00", "bebidas", "Cerveja."),
+      createItem("Skol", "R$ 7,00", "bebidas", "Cerveja."),
+      createItem("Chopp 300 ml", "R$ 8,00", "bebidas", "Tradicional ou de vinho."),
+      createItem("Chopp 500 ml", "R$ 11,00", "bebidas", "Tradicional ou de vinho."),
+      createItem("Milkshake 300 ml", "R$ 12,00", "bebidas", "Milkshake."),
+      createItem("Milkshake 500 ml", "R$ 16,00", "bebidas", "Milkshake."),
+
+      createItem("Batata Frita Tradicional — P", "R$ 12,00", "porcoes", "Porção pequena."),
+      createItem("Batata Frita Tradicional — M", "R$ 18,00", "porcoes", "Porção média."),
+      createItem("Batata Frita Tradicional — G", "R$ 25,00", "porcoes", "Porção grande."),
+      createItem("Batata Frita com Cheddar e Bacon — P", "R$ 12,00", "porcoes", "Porção pequena."),
+      createItem("Batata Frita com Cheddar e Bacon — M", "R$ 18,00", "porcoes", "Porção média."),
+      createItem("Batata Frita com Cheddar e Bacon — G", "R$ 25,00", "porcoes", "Porção grande."),
+      createItem("Batata Rústica — P", "R$ 15,00", "porcoes", "Porção pequena."),
+      createItem("Batata Rústica — M", "R$ 22,00", "porcoes", "Porção média."),
+      createItem("Batata Rústica — G", "R$ 30,00", "porcoes", "Porção grande."),
+      createItem("Onion Rings — P", "R$ 14,00", "porcoes", "Porção pequena."),
+      createItem("Onion Rings — M", "R$ 20,00", "porcoes", "Porção média."),
+      createItem("Onion Rings — G", "R$ 28,00", "porcoes", "Porção grande."),
+      createItem("Frango Frito — P", "R$ 18,00", "porcoes", "Porção pequena."),
+      createItem("Frango Frito — M", "R$ 25,00", "porcoes", "Porção média."),
+      createItem("Frango Frito — G", "R$ 35,00", "porcoes", "Porção grande."),
+      createItem("Salada Caesar — P", "R$ 16,00", "porcoes", "Porção pequena."),
+      createItem("Salada Caesar — M", "R$ 24,00", "porcoes", "Porção média."),
+      createItem("Salada Caesar — G", "R$ 32,00", "porcoes", "Porção grande."),
+
+      createItem("Sorvete — 1 bola", "R$ 6,00", "sobremesas", "Uma bola de sorvete."),
+      createItem("Sorvete — 2 bolas", "R$ 12,00", "sobremesas", "Duas bolas de sorvete."),
+      createItem("Picolé", "R$ 5,00", "sobremesas", "Picolé."),
+      createItem("Torta de Morango Vegana", "R$ 12,00", "sobremesas", "Torta vegana."),
+      createItem("Torta de Chocolate Low Carb", "R$ 14,00", "sobremesas", "Opção saudável."),
+      createItem("Torta de Limão", "R$ 10,00", "sobremesas", "Torta de limão.")
+    ];
+
+    let activeCategory = "popular";
+    const CART_STORAGE_KEY = "vinils-burguer-cart";
+    let cart = loadCart();
+    let cartIsOpen = false;
+    let orderCompleted = false;
+
+    function openMenuPage() {
+      document.getElementById("home-view").classList.add("hidden");
+      document.getElementById("contact-view").classList.add("hidden");
+      document.getElementById("about-view").classList.add("hidden");
+      document.getElementById("location-view").classList.add("hidden");
+      document.getElementById("menu-view").classList.remove("hidden");
+      document.getElementById("menu-layout").classList.toggle("hidden", cartIsOpen);
+      document.getElementById("cart-view").classList.toggle("hidden", !cartIsOpen);
+      renderCategories();
+      renderMenuItems();
+      updateCart();
+      window.scrollTo(0, 0);
+    }
+
+    function closeMenuPage() {
+      document.getElementById("menu-view").classList.add("hidden");
+      document.getElementById("contact-view").classList.add("hidden");
+      document.getElementById("about-view").classList.add("hidden");
+      document.getElementById("location-view").classList.add("hidden");
+      document.getElementById("home-view").classList.remove("hidden");
+      cartIsOpen = false;
+      window.scrollTo(0, 0);
+    }
+
+    function openContactPage() {
+      document.getElementById("home-view").classList.add("hidden");
+      document.getElementById("menu-view").classList.add("hidden");
+      document.getElementById("about-view").classList.add("hidden");
+      document.getElementById("location-view").classList.add("hidden");
+      document.getElementById("contact-view").classList.remove("hidden");
+      window.scrollTo(0, 0);
+    }
+
+    function closeContactPage() {
+      document.getElementById("contact-view").classList.add("hidden");
+      document.getElementById("about-view").classList.add("hidden");
+      document.getElementById("location-view").classList.add("hidden");
+      document.getElementById("home-view").classList.remove("hidden");
+      window.scrollTo(0, 0);
+    }
+
+    function openAboutPage() {
+      openInfoPage("about-view");
+    }
+
+    function openLocationPage() {
+      openInfoPage("location-view");
+    }
+
+    function openInfoPage(viewId) {
+      ["home-view", "menu-view", "contact-view", "about-view", "location-view"].forEach(id =>
+        document.getElementById(id).classList.toggle("hidden", id !== viewId)
+      );
+      window.scrollTo(0, 0);
+    }
+
+    function closeInfoPage() {
+      document.getElementById("about-view").classList.add("hidden");
+      document.getElementById("location-view").classList.add("hidden");
+      document.getElementById("home-view").classList.remove("hidden");
+      window.scrollTo(0, 0);
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    }
+
+    function selectCategory(id) {
+      activeCategory = id;
+      document.getElementById("search-input").value = "";
+      renderCategories();
+      renderMenuItems();
+    }
+
+    function loadCart() {
+      try {
+        const savedCart = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || "[]");
+        if (!Array.isArray(savedCart)) return [];
+        return savedCart.filter(entry =>
+          entry &&
+          typeof entry.name === "string" &&
+          Number.isInteger(entry.quantity) &&
+          entry.quantity > 0 &&
+          ITEMS.some(item => item.name === entry.name && item.price)
+        );
+      } catch (error) {
+        console.error("Não foi possível carregar o carrinho salvo.", error);
+        return [];
+      }
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+      } catch (error) {
+        console.error("Não foi possível salvar o carrinho.", error);
+      }
+    }
+
+    function formatPrice(cents) {
+      return new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      }).format(cents / 100);
+    }
+
+    function getPriceInCents(price) {
+      return Number(price.replace(/[^\d,]/g, "").replace(",", ""));
+    }
+
+    function addToCart(itemName) {
+      const item = ITEMS.find(product => product.name === itemName);
+      if (!item) {
+        console.error(`Produto não encontrado: ${itemName}`);
+        return;
+      }
+      if (!item.price) {
+        console.error(`O produto "${itemName}" não pode ser adicionado sem um preço definido.`);
+        return;
+      }
+
+      orderCompleted = false;
+      document.getElementById("order-confirmation").classList.add("hidden");
+      document.getElementById("payment-options").classList.add("hidden");
+      document.getElementById("checkout-button").classList.remove("hidden");
+      const existingItem = cart.find(entry => entry.name === item.name);
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cart.push({ name: item.name, quantity: 1 });
+      }
+
+      saveCart();
+      updateCart();
+    }
+
+    function removeCartItem(itemName) {
+      cart = cart.filter(entry => entry.name !== itemName);
+      saveCart();
+      updateCart();
+    }
+
+    function changeCartQuantity(itemName, change) {
+      const cartItem = cart.find(entry => entry.name === itemName);
+      if (!cartItem) return;
+      cartItem.quantity += change;
+      cart = cart.filter(entry => entry.quantity > 0);
+      saveCart();
+      updateCart();
+    }
+
+    function toggleCartView() {
+      cartIsOpen = !cartIsOpen;
+      document.getElementById("menu-layout").classList.toggle("hidden", cartIsOpen);
+      document.getElementById("cart-view").classList.toggle("hidden", !cartIsOpen);
+      document.getElementById("search-input").parentElement.classList.toggle("hidden", cartIsOpen);
+      updateCart();
+    }
+
+    function showPaymentOptions() {
+      if (cart.length === 0) return;
+      document.getElementById("payment-options").classList.remove("hidden");
+      document.getElementById("checkout-button").classList.add("hidden");
+    }
+
+    function placeOrder(paymentMethod) {
+      if (cart.length === 0) {
+        console.error("Não é possível concluir um pedido com o carrinho vazio.");
+        return;
+      }
+      orderCompleted = true;
+      cart = [];
+      saveCart();
+      updateCart();
+      document.getElementById("order-confirmation").textContent =
+        `Você realizou um pedido! Forma de pagamento: ${paymentMethod}.`;
+    }
+
+    function updateCart() {
+      const badge = document.getElementById("cart-count");
+      const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+      badge.textContent = itemCount;
+      badge.classList.toggle("hidden", itemCount === 0);
+
+      const cartItems = document.getElementById("cart-items");
+      const cartTotal = document.getElementById("cart-total");
+      if (!cartItems || !cartTotal) return;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = orderCompleted ? "" : '<p class="cart-empty">Seu carrinho está vazio. Adicione seus favoritos pelo cardápio.</p>';
+        cartTotal.textContent = formatPrice(0);
+        document.querySelector(".cart-total").classList.add("hidden");
+        document.getElementById("checkout-panel").classList.add("hidden");
+        document.getElementById("order-confirmation").classList.toggle("hidden", !orderCompleted);
+        return;
+      }
+
+      document.querySelector(".cart-total").classList.remove("hidden");
+      document.getElementById("checkout-panel").classList.remove("hidden");
+      document.getElementById("order-confirmation").classList.add("hidden");
+      let total = 0;
+      cartItems.innerHTML = cart.map(cartItem => {
+        const product = ITEMS.find(item => item.name === cartItem.name);
+        const priceInCents = getPriceInCents(product.price);
+        total += priceInCents * cartItem.quantity;
+        return `
+          <article class="cart-item">
+            <div class="cart-item-info">
+              <h3>${product.name}</h3>
+              <p>${formatPrice(priceInCents)} cada</p>
+            </div>
+            <div class="cart-item-actions">
+              <button class="quantity-button" onclick="changeCartQuantity('${product.name}', -1)" aria-label="Remover uma unidade de ${product.name}">−</button>
+              <span class="cart-quantity">${cartItem.quantity}</span>
+              <button class="quantity-button" onclick="changeCartQuantity('${product.name}', 1)" aria-label="Adicionar uma unidade de ${product.name}">+</button>
+              <button class="remove-item-button" onclick="removeCartItem('${product.name}')" aria-label="Excluir ${product.name} do carrinho" title="Excluir item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m4 4v6m6-6v6" />
+                </svg>
+              </button>
+              <strong class="cart-item-total">${formatPrice(priceInCents * cartItem.quantity)}</strong>
+            </div>
+          </article>
+        `;
+      }).join("");
+      cartTotal.textContent = formatPrice(total);
+    }
+
+    function renderCategories() {
+      const search = document.getElementById("search-input").value;
+      const sidebar = document.getElementById("category-sidebar");
+      sidebar.innerHTML = CATEGORIES.map(cat => `
+        <button 
+          class="cat-btn ${activeCategory === cat.id && !search ? 'active' : ''}" 
+          onclick="selectCategory('${cat.id}')"
+        >
+          <span class="cat-icon">${cat.icon}</span>
+          <span class="cat-label">${cat.label}</span>
+        </button>
+      `).join("");
+    }
+
+    function renderMenuItems() {
+      const search = document.getElementById("search-input").value.toLowerCase();
+      const heading = document.getElementById("menu-heading");
+      const grid = document.getElementById("menu-grid");
+
+      renderCategories();
+
+      const filtered = ITEMS.filter(item => {
+        if (search) {
+          return item.name.toLowerCase().includes(search) ||
+            item.description.toLowerCase().includes(search);
+        }
+        if (activeCategory === "popular") return item.featured;
+        return item.category === activeCategory;
+      });
+
+      if (search) {
+        heading.textContent = `${filtered.length} resultado${filtered.length !== 1 ? 's' : ''} para "${search}"`;
+      } else {
+        const catObj = CATEGORIES.find(c => c.id === activeCategory);
+        heading.textContent = catObj ? catObj.label : "";
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <span>🔍</span>
+            <p>Nenhum item encontrado</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="${item.img}" alt="${item.name}">
+            ${getMenuImageCredit(item.name)}
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-copy">
+              <h3>${item.name}</h3>
+              <p class="menu-card-description">${item.description}</p>
+              <p class="menu-card-price ${item.price ? '' : 'price-on-request'}">${item.price || "Consultar valor"}</p>
+            </div>
+            ${item.price ? `
+              <span class="add-indicator-wrap">
+                <button class="btn-add-red" onclick="addToCart('${item.name}')" aria-label="Adicionar ${item.name} ao carrinho">+</button>
+                <span class="add-indicator" aria-hidden="true"></span>
+              </span>
+            ` : ''}
+          </div>
+        </div>
+      `).join("");
+    }
+  </script>
+</body>
+</html>
